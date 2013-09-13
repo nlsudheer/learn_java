@@ -57,15 +57,20 @@ public class ArmstrongNumber {
     }
 
 
-    ArrayList getArmStrongNumbers(int min, int max){
-        ArrayList numArray = new ArrayList();
-
-        for (int i = min; i <= max; i++ ){
-            if (verifyIsArmStrong(i, getNumberOrder(i))){   // to avoid calling getNumberOrder use if else loop to send the order
-            numArray.add(i);
+    ArrayList getArmStrongNumbers(int min, int max) {
+        int order = 0;
+        for (int i = min; i <= max; i++) {
+            if (i < 9) {
+                order = 1;
+            } else if (i < 99) {
+                order = 2;
+            } else if (i < 999) {
+                order = 3;
+            } else {
+                order = getNumberOrder(i);
             }
         }
-        return numArray;
+        return getArmStrongNumbers(min, max, order);
     }
 
     ArrayList getArmStrongNumbers(int min, int max, int numOrder){
