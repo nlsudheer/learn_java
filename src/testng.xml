@@ -1,0 +1,31 @@
+<suite name="Suite1" verbose="1">
+    <test name="Regression">
+        <groups>
+            <run>
+                <exclude name="pending"/>
+                <include name="complete"/>
+            </run>
+        </groups>
+
+        <packages>
+            <package name="learnjava.*"/>
+        </packages>
+
+        <classes>
+            <class name="learnjava.Factorial">
+                <methods>
+                    <include name="simpleFactBtRecursion"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Nopackage">
+        <classes>
+            <class name="learnjava.Fibonacci"/>
+            <class name="learnjava.Factorial"/>
+        </classes>
+    </test>
+
+
+</suite>
