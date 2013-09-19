@@ -1,5 +1,8 @@
 package learnjava;
 
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
 import java.util.ArrayList;
 
 /**
@@ -50,14 +53,17 @@ public class ArmstrongNumber {
         return (number == tempNum);
     }
 
-    boolean verifyIsArmStrong(int number) {
+    @Parameters({"armStrongNumber"})
+    @Test(groups = {"done"})
+    public boolean verifyIsArmStrong(int number) {
         int num = number;
         int numOrder = getNumberOrder(number);
         return verifyIsArmStrong(number, numOrder);
     }
 
-
-    ArrayList getArmStrongNumbers(int min, int max) {
+    @Test(groups = {"done"})
+    @Parameters({"armStrongNumberMin", "armStrongNumberMax"})
+    public ArrayList getArmStrongNumbers(int min, int max) {
         int order = 0;
         for (int i = min; i <= max; i++) {
             if (i < 9) {
@@ -84,10 +90,10 @@ public class ArmstrongNumber {
         return numArray;
     }
 
-    public static void main(String args[]) {
-        int num = 3711;
-        ArmstrongNumber an = new ArmstrongNumber();
-        System.out.println(an.getArmStrongNumbers(10, 400));
-        System.out.println(an.verifyIsArmStrong(num));
-    }
+//    public static void main(String args[]) {
+//        int num = 3711;
+//        ArmstrongNumber an = new ArmstrongNumber();
+//        System.out.println(an.getArmStrongNumbers(10, 400));
+//        System.out.println(an.verifyIsArmStrong(num));
+//    }
 }

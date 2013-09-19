@@ -6,26 +6,21 @@
     <parameter name="armStrongNumber" value="371"/>
     <parameter name="fibonacciNumber" value="8"/>
 
-
-    <test name="Regression">
-        <!--<groups>-->
-            <!--<run>-->
-                <!--<exclude name="pending"/>-->
-                <!--<include name="done"/>-->
-            <!--</run>-->
-        <!--</groups>-->
-
-        <!--<packages>-->
-        <!--<package name="learnjava.*"/>-->
-        <!--</packages>-->
-
+    <test name="ByClass">
         <classes>
-            <class name="learnjava.Fibonacci">
-                <!--<methods>-->
-                <!--<include name="getArmStrongNumbers"/>-->
-                <!--</methods>-->
+            <class name="learnjava.PalindromeNumber">   <!-- runs all methods in the mentioned class-->
             </class>
         </classes>
     </test>
 
+    <test name="ByClassAndMethods">
+        <classes>
+            <class name="learnjava.Fibonacci">   <!-- runs mentioned methods in the mentioned class-->
+                <methods>
+                    <include name="fib"/>
+                    <exclude name="fibUsingTwoVariable"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
 </suite>

@@ -16,7 +16,7 @@
         <!--</groups>-->
 
         <packages>
-        <package name="learnjava.*"/>
+            <package name="learnjava.*"/>
         </packages>
 
 

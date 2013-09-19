@@ -1,5 +1,7 @@
 package learnjava;
 
+import org.testng.annotations.Test;
+
 /**
  * Created with IntelliJ IDEA.
  * User: sudheern
@@ -9,7 +11,9 @@ package learnjava;
  */
 public class PalindromeNumber {
 
-    public static void main(String args[]) {
+
+    @Test(groups = {"done"})
+    public void palindromeNumber() {
         int num, tempNum;
         num = tempNum = 121;
         int rem, palNum;
@@ -18,7 +22,7 @@ public class PalindromeNumber {
         while (tempNum > 0) {
             rem = tempNum % 10;
             tempNum = (int) tempNum / 10;
-            palNum = palNum + (rem * 10);
+            palNum = (palNum * 10) + rem;
         }
         if (palNum == num) {
             System.out.println(num + " is a palindrome number");

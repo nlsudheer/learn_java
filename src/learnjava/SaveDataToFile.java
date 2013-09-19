@@ -16,7 +16,7 @@ public class SaveDataToFile {
 		public static WebObj webobj;
 	    //public static Logger logger;
 				
-		@BeforeClass
+//		@BeforeClass
 		public void setup()
 		{
 		webobj = new WebObj("10.103.15.20",4444,"*chrome","http://www.moneycontrol.com/");
@@ -30,7 +30,8 @@ public class SaveDataToFile {
 
 		
 			
-			@Test public void testMoneyControl() throws Exception {
+//			@Test
+            public void testMoneyControl() throws Exception {
 				webobj.open("/");
 				webobj.click("menu2");
 				webobj.waitForPageToLoad("30000");
