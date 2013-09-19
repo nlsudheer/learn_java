@@ -6,20 +6,9 @@
     <parameter name="armStrongNumber" value="371"/>
     <parameter name="fibonacciNumber" value="8"/>
 
-
-    <test name="Regression">
-        <!--<groups>-->
-        <!--<run>-->
-        <!--<exclude name="pending"/>-->
-        <!--<include name="done"/>-->
-        <!--</run>-->
-        <!--</groups>-->
-
+    <test name="ByPackage">
         <packages>
             <package name="learnjava.*"/>
         </packages>
-
-
     </test>
-
 </suite>

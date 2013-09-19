@@ -8,18 +8,16 @@
 
 
     <test name="Regression">
-        <!--<groups>-->
-        <!--<run>-->
-        <!--<exclude name="pending"/>-->
-        <!--<include name="done"/>-->
-        <!--</run>-->
-        <!--</groups>-->
+        <groups>
+            <run>
+                <exclude name="pending"/>
+                <include name="done"/>
+            </run>
+        </groups>
 
         <packages>
-        <package name="learnjava.*"/>
+            <package name="learnjava.*"/>
         </packages>
-
-
     </test>
 
 </suite>
