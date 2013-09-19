@@ -1,9 +1,13 @@
-<suite name="Suite1" verbose="1">
+<suite name="Suite" verbose="1">
+    <parameter name="armStrongNumberMin" value="9"/>
+    <parameter name="armStrongNumberMax" value="999"/>
+    <parameter name="armStrongNumber" value="371"/>
+
     <test name="Regression">
         <groups>
             <run>
                 <exclude name="pending"/>
-                <include name="complete"/>
+                <include name="done"/>
             </run>
         </groups>
 

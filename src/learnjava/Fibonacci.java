@@ -1,79 +1,64 @@
+/**
+ * 
+ */
 package learnjava;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.io.*;
 
-
-
-
-public class Fibonacci{
-	
-	
-	public static void main(String[] args) {
-        String.class.getClass().getMethods(); // var = "12";
-		try {
-		BufferedReader bfd = new BufferedReader(new InputStreamReader(System.in));
-		String str = bfd.readLine();
-		}catch (Exception e) {
-			System.out.println("Exception while reading input");
-		}
-	}
-}
-
-
-
-/*
-
-
-*//*************************************************************************
- *  Compilation:  javac Fibonacci.java
- *  Execution:    java Fibonacci N
- *
- *  Computes and prints the first N Fibonacci numbers.
- *
- *  WARNING:  this program is spectacularly inefficient and is meant
- *            to illustrate a performance bug, e.g., set N = 45.
- *
- *
- *   % java Fibonacci 7
- *   1: 1
- *   2: 1
- *   3: 2
- *   4: 3
- *   5: 5
- *   6: 8
- *   7: 13
- *
- *   Remarks
- *   -------
- *    - The 93rd Fibonacci number would overflow a long, but this
- *      will take so long to compute with this function that we
- *      don't bother to check for overflow.
- *  //http://www.cs.princeton.edu/introcs/23recursion/Fibonacci.java.html
- *************************************************************************//*
-
+/**
+ * @author lsudheer
+ * http://www.javatpoint.com/operators-in-java
+ * Using two variables //http://www.zacharyfox.com/blog/fibonacci-project/fibonacci-in-java
+ * using 3 variables: //http://www.freejavaguide.com/javasource1.htm
+ */
 public class Fibonacci {
-	
-	public static long fib(int n) {
+
+	public static void fib(int n) {
+		long a,b=0,c=1;
 		
-		if(n<=1) return n;
-		else return fib(n-1) + fib(n-2);
-		
-	}
-	
-	public static void main(String []args) {
-		
-		int N = Integer.parseInt(args[0]);
-		
-		for (int i=1;i<= N;i++) {
+		for(int i=0; i<=n; i++) {
 			
-			System.out.println("Fibonacci value for the iteration "+i+": "+ fib(i));
+			System.out.println("Fibonacci series for the iteration "+i+" is: "+c);
+			
+			a=b;
+			b=c;
+			c=a+b;
 			
 		}
 		
 	}
-
+	
+	public static void fib1(int n) {
+		
+		long a=0,b=1;
+		
+		for(int i=0; i <=n; i++) {
+						
+			a=a+b;
+			b=a-b;
+			System.out.println("Fibonacci series for the iteration "+i+" is: "+a);
+		}
+		
+		
+	}
+	
+	public static void main (String []args) {
+		int N =0;
+		String str;
+		try {
+			System.out.println("Enter the any digit to find it's Fibonacci series ");
+			BufferedReader bfd = new BufferedReader (new InputStreamReader(System.in));
+			str = bfd.readLine(); 
+			N = Integer.valueOf(str).intValue();
+			System.out.println("Enter the any digit to find it's Fibonacci series "+N);
+		}catch (Exception e) {
+			System.out.println("Catch exception "+e);
+			
+		}
+		
+		fib(N);
+		fib1(N);
+		System.out.println("Fiboncci series for the number "+ N +": " );
+		
+	}
 }
-
-
-*/
