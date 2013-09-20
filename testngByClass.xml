@@ -8,8 +8,11 @@
 
     <test name="ByClass">
         <classes>
-            <class name="learnjava.PalindromeNumber"/>   <!-- runs all methods in the mentioned class-->
-            <class name="learnjava.PrimeNumbers"/>
+            <!--<class name="learnjava.PalindromeNumber"/>   &lt;!&ndash; runs all methods in the mentioned class&ndash;&gt;-->
+            <!--<class name="learnjava.PrimeNumbers"/>-->
+            <!--<class name="learnjava.ArmstrongNumber"/>-->
+            <class name="learnjava.TemplateForTestNG"/>
+
         </classes>
     </test>
 
