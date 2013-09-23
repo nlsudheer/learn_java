@@ -1,6 +1,5 @@
 package learnjava;
 
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -9,31 +8,31 @@ import java.util.ArrayList;
 /**
  * 371 = 3**3 + 7**3 + 1**3 = 371.
  * an Armstrong number or a plus perfect number) is a number that is the sum of its own digits each raised to the power of the number of digits.
- * <p/>
+ *
  * A five digit ArmStrong number ABCDE is such that ABCDE = A^5+B^5+C^5+D^5+E^5.
  * let A,B,C,D,E be variables, then equation is
  * E+D*10+C*100+B*1000+A*10000 = A^5 + B^5 + C^5 + D^5 + E^5.
- * <p/>
+ *
  * 1. Return 4 digit armstrong numbers in he range of 1 to 10000
  * 2. Find whether a given number is armstrong number or not
  * 3. Return all armstrong numbers in the range of 0 to 999
- * <p/>
+ *
  * http://in.answers.yahoo.com/question/index?qid=20091118020348AAbKxA6
- * <p/>
+ *
  * http://www.programmingsimplified.com/java/source-code/java-program-armstrong-number
- * <p/>
+ *
  * http://www.javatpoint.com/operators-in-java
- * <p/>
- * <p/>
+ *
+ *
  * Created with IntelliJ IDEA.
  * User: sudheern
  * Date: 13/9/13
  * Time: 2:22 PM
  * To change this template use File | Settings | File Templates.
  */
-public class ArmstrongNumber {
+public class TemplateForTestNG {
 
-    int getNumberOrder(int num) {
+     int getNumberOrder(int num) {
         int i = 1;
         while (num > 10) {
             num = (int) num / 10;
@@ -42,7 +41,7 @@ public class ArmstrongNumber {
         return i;
     }
 
-    boolean verifyIsArmStrong(int number, int numOrder) {
+     boolean verifyIsArmStrong(int number, int numOrder) {
         int num = number;
         int tempNum = 0;
         int reminder = 0;
@@ -55,7 +54,7 @@ public class ArmstrongNumber {
     }
 
     @Parameters({"armStrongNumber"})
-    @Test(groups = {"pending"})
+    @Test(groups = {"done"})
     public boolean verifyIsArmStrong(int number) {
         int num = number;
         int numOrder = getNumberOrder(number);
@@ -63,7 +62,7 @@ public class ArmstrongNumber {
         return verifyIsArmStrong(number, numOrder);
     }
 
-    @Test (groups = {"pending"})
+    @Test(groups = {"done"})
     @Parameters({"armStrongNumberMin", "armStrongNumberMax"})
     public ArrayList getArmStrongNumbers(int min, int max) {
         int order = 0;
@@ -82,30 +81,21 @@ public class ArmstrongNumber {
         return getArmStrongNumbers(min, max, order);
     }
 
-    ArrayList getArmStrongNumbers(int min, int max, int numOrder) {
+    private ArrayList getArmStrongNumbers(int min, int max, int numOrder){
         ArrayList numArray = new ArrayList();
 
-        for (int i = min; i <= max; i++) {
-            if (verifyIsArmStrong(i, getNumberOrder(i))) {
+        for (int i = min; i <= max; i++ ){
+            if (verifyIsArmStrong(i, getNumberOrder(i))){
                 numArray.add(i);
             }
         }
         return numArray;
     }
 
-
-    @Test(groups = {"run"})
-    public void callByObject() {
-        int num = 153;
-        ArmstrongNumber an = new ArmstrongNumber();
-        System.out.println("callByObject: " + an.getArmStrongNumbers(10, 700));
-        System.out.println("callByObject: "+ num + " is:  " + an.verifyIsArmStrong(num));
-    }
-
-    @Test(groups = {"run"})
-    public void callByMethod() {
-        int num = 371;
-        System.out.println("callByMethod: " + getArmStrongNumbers(101, 400, 3));
-        System.out.println("callByMethod: " + verifyIsArmStrong(num, 3));
-    }
+//    public static void main(String args[]) {
+//        int num = 3711;
+//        ArmstrongNumber an = new ArmstrongNumber();
+//        System.out.println(an.getArmStrongNumbers(10, 400));
+//        System.out.println(an.verifyIsArmStrong(num));
+//    }
 }

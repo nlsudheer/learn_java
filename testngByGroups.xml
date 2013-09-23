@@ -8,17 +8,22 @@
 
 
     <test name="RunByGroup">
-        <!--<groups>-->
-            <!--<run>-->
-                <!--<exclude name="pending"/>-->
-                <!--<include name="done"/>-->
-            <!--</run>-->
-        <!--</groups>-->
+        <groups>
+            <run>
+                <include name="pending"/>
+                <include name="done"/>
+                <exclude name="run"/>
+            </run>
+        </groups>
 
-        <classes>
-            <class name="learnjava.Fibonacci"/>   <!-- runs mentioned methods in the mentioned class-->
-            <class name="learnjava.PalindromeNumber"/>
-        </classes>
+        <packages>
+            <package name="learnjava.*"/>
+        </packages>
+
+        <!--<classes>-->
+            <!--<class name="learnjava.Fibonacci"/>   &lt;!&ndash; runs mentioned methods in the mentioned class&ndash;&gt;-->
+            <!--<class name="learnjava.PalindromeNumber"/>-->
+        <!--</classes>-->
     </test>
 
 </suite>

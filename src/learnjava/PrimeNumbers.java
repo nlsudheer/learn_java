@@ -17,7 +17,7 @@ import org.testng.annotations.Test;
  */
 public class PrimeNumbers {
 
-    @Test(groups = {"done"})
+
     public boolean isPrime_Simple(int num) {
         for (int i = 2; i < num; i++) {
             if ((num % i) == 0)
@@ -26,12 +26,19 @@ public class PrimeNumbers {
         return true;
     }
 
-    @Test
+
     public boolean isPrime(int num) {
         for (int i = 2; i <= num / 2; i++) {
             if ((num % i) == 0)
                 return false;
         }
         return true;
+    }
+
+    @Test(groups = {"done"})
+    public void result() {
+        PrimeNumbers pn = new PrimeNumbers();
+        System.out.println("PrimeNumbers: " + pn.isPrime(6));
+        System.out.println("PrimeNumbers: " + pn.isPrime_Simple(7));
     }
 }
