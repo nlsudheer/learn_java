@@ -8,19 +8,22 @@
 
     <test name="ByClass">
         <classes>
-            <class name="learnjava.PalindromeNumber"/>   <!-- runs all methods in the mentioned class-->
-            <class name="learnjava.PrimeNumbers"/>
+            <!--<class name="learnjava.PalindromeNumber"/>   &lt;!&ndash; runs all methods in the mentioned class&ndash;&gt;-->
+            <!--<class name="learnjava.PrimeNumbers"/>-->
+            <!--<class name="learnjava.ArmstrongNumber"/>-->
+            <class name="learnjava.TemplateForTestNG"/>
+
         </classes>
     </test>
 
-    <!--<test name="ByClassAndMethods">-->
-        <!--<classes>-->
-            <!--&lt;!&ndash;<class name="learnjava.Fibonacci">   &lt;!&ndash; runs mentioned methods in the mentioned class&ndash;&gt;&ndash;&gt;-->
-                <!--&lt;!&ndash;<methods>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<include name="fib"/>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<exclude name="fibUsingTwoVariable"/>&ndash;&gt;-->
-                <!--&lt;!&ndash;</methods>&ndash;&gt;-->
-            <!--&lt;!&ndash;</class>&ndash;&gt;-->
-        <!--</classes>-->
-    <!--</test>-->
+    <test name="ByClassAndMethods">
+        <classes>
+            <class name="learnjava.Fibonacci">   <!-- runs mentioned methods in the mentioned class-->
+                <methods>
+                    <include name="fib"/>
+                    <exclude name="fibUsingTwoVariable"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
 </suite>
